@@ -1,0 +1,1 @@
+import{t as e}from"./choice-group.anJ8BP9l.js";for(let t of document.querySelectorAll(`.st-item`))e(t,{feedback:e=>e?`Correct.`:t.dataset.rationales===`key`?`Not quite. The correct choice is marked, and the worked solution is below.`:`Not quite. The note under each choice names the trap it carries.`});

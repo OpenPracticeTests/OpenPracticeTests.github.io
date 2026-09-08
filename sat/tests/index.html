@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Every full-length SAT practice test on Open Practice Tests, grouped into introductory, standard, and advanced levels. Timed, scored instantly, free."><link rel="canonical" href="https://openpracticetests.org/sat/tests/"><meta property="og:type" content="website"><meta property="og:site_name" content="Open Practice Tests"><meta property="og:locale" content="en_US"><meta property="og:title" content="SAT Practice Tests | Open Practice Tests"><meta property="og:description" content="Every full-length SAT practice test on Open Practice Tests, grouped into introductory, standard, and advanced levels. Timed, scored instantly, free."><meta property="og:url" content="https://openpracticetests.org/sat/tests/"><meta property="og:image" content="https://openpracticetests.org/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SAT Practice Tests | Open Practice Tests"><meta name="twitter:description" content="Every full-length SAT practice test on Open Practice Tests, grouped into introductory, standard, and advanced levels. Timed, scored instantly, free."><meta name="twitter:image" content="https://openpracticetests.org/og-image.png"><meta name="twitter:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk.woff2"><title>SAT Practice Tests | Open Practice Tests</title><script>
+      // Apply the saved theme before first paint to avoid a flash. Soft is the
+      // default; only "light" and "dark" override it.
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("opt.theme");
+        } catch (e) {}
+        if (t !== "soft" && t !== "light" && t !== "dark") t = "soft";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CyBKJ_JA.css"><style>.tier-head[data-astro-cid-s4b42ur5] h2[data-astro-cid-s4b42ur5]{margin:0;font-size:1.35rem}.tile-grid[data-astro-cid-s4b42ur5]{grid-auto-rows:1fr}.tile-cell[data-astro-cid-s4b42ur5]{flex-direction:column;gap:.35rem;display:flex}.tile-cell[data-astro-cid-s4b42ur5] .tile[data-astro-cid-s4b42ur5]{flex:1}.tile-browse[data-astro-cid-s4b42ur5]{border:1px solid var(--btn-edge);border-radius:var(--radius);min-height:1.75rem;color:var(--tone);justify-content:center;align-items:center;padding:.1rem .3rem;font-size:.75rem;font-weight:600;text-decoration:none;display:flex}.tile-browse[data-astro-cid-s4b42ur5]:hover{border-color:var(--tone)}
+</style></head><body><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item is-section"><details class="nav-menu"><summary class="nav-summary">Tests<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/" class="has-children">SAT</a><ul class="nav-sub"><li><a href="/sat/tests/" aria-current="page">Practice tests</a></li><li><a href="/sat/english/">Reading and Writing study guide</a></li><li><a href="/sat/math/">Math study guide</a></li><li><a href="/sat/#guides">Exam guides</a></li></ul></li></ul></details></li><li class="nav-item"><a class="nav-link" href="/how-to-use/">How to use</a></li><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">More<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></details></li></ul></nav><script>
+  // Single-open, click-outside, Escape, and a close when focus leaves the nav entirely.
+  // Everything else, the toggle and the expanded state a screen reader hears included, is
+  // the UA's.
+  (function () {
+    var nav = document.querySelector(".site-nav");
+    if (!nav) return;
+    var menus = Array.prototype.slice.call(nav.querySelectorAll("details.nav-menu"));
+    if (!menus.length) return;
+
+    function closeAll(except) {
+      menus.forEach(function (m) {
+        if (m !== except) m.open = false;
+      });
+    }
+
+    menus.forEach(function (m) {
+      m.addEventListener("toggle", function () {
+        if (m.open) closeAll(m);
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target)) closeAll(null);
+    });
+
+    // No stopPropagation, and an early return when nothing is open. One other handler is on
+    // `document` (the runner's modal); a tool panel's and the highlight popover's are bound to
+    // their own elements, so they run first and both stop propagation. Ordering is documented
+    // in tools/floating-panel.ts.
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = menus.filter(function (m) {
+        return m.open;
+      });
+      if (!open.length) return;
+      var summary = open[0].querySelector("summary");
+      closeAll(null);
+      if (summary) summary.focus();
+    });
+
+    // Tabbing out of a panel must not leave it hanging over the page. The test is per
+    // disclosure, not per nav: tabbing from the last link of one panel to a top-level link
+    // beside it never leaves the nav, so a nav-wide test would keep that panel open.
+    nav.addEventListener("focusout", function (e) {
+      var to = e.relatedTarget;
+      menus.forEach(function (m) {
+        if (m.open && (!to || !m.contains(to))) m.open = false;
+      });
+    });
+  })();
+</script><div class="theme-switch" role="radiogroup" aria-label="Color theme"><button type="button" class="theme-opt" data-theme-value="soft" role="radio" aria-checked="true" tabindex="0">Soft</button><button type="button" class="theme-opt" data-theme-value="light" role="radio" aria-checked="false" tabindex="-1">Light</button><button type="button" class="theme-opt" data-theme-value="dark" role="radio" aria-checked="false" tabindex="-1">Dark</button></div></header><main class="site-main" data-tone="1"><nav class="crumbs" aria-label="Breadcrumb"><a href="/sat/">SAT</a><span aria-hidden="true">&rsaquo;</span><span>Practice tests</span></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SAT","item":"https://openpracticetests.org/sat/"},{"@type":"ListItem","position":2,"name":"Practice tests"}]}</script><p class="eyebrow" data-astro-cid-s4b42ur5>Full length and timed</p><h1 data-astro-cid-s4b42ur5>Practice tests</h1><p class="lede" data-astro-cid-s4b42ur5>Each test is the full 98 questions across four timed modules, at the module lengths the real exam uses. Answer one question at a time, flag what you want to revisit, then see how many you got right, a per-topic breakdown, and a worked explanation for every question. Nothing to install and no account: your progress is saved in your own browser.</p><p data-astro-cid-s4b42ur5>6 tests are written, across 3 levels. More are being added.</p><section class="tier" data-tone="2" data-astro-cid-s4b42ur5><div class="tier-head" data-astro-cid-s4b42ur5><h2 data-astro-cid-s4b42ur5>Introductory</h2><span class="tier-count" data-astro-cid-s4b42ur5>2 tests</span></div><p class="tier-blurb" data-astro-cid-s4b42ur5>An accessible entry point to build confidence.</p><div class="tile-grid" data-astro-cid-s4b42ur5><div class="tile-cell" data-astro-cid-s4b42ur5><a class="tile is-live" href="/sat/tests/introductory-1/" aria-label="Start Introductory Practice Test 1" data-astro-cid-s4b42ur5><span class="tile-num" aria-hidden="true" data-astro-cid-s4b42ur5>1</span><span class="tile-state" aria-hidden="true" data-astro-cid-s4b42ur5>Start</span></a><a class="tile-browse" href="/sat/tests/introductory-1/browse/" aria-label="Browse Introductory Practice Test 1" data-astro-cid-s4b42ur5>Browse</a></div><div class="tile-cell" data-astro-cid-s4b42ur5><a class="tile is-live" href="/sat/tests/introductory-2/" aria-label="Start Introductory Practice Test 2" data-astro-cid-s4b42ur5><span class="tile-num" aria-hidden="true" data-astro-cid-s4b42ur5>2</span><span class="tile-state" aria-hidden="true" data-astro-cid-s4b42ur5>Start</span></a><a class="tile-browse" href="/sat/tests/introductory-2/browse/" aria-label="Browse Introductory Practice Test 2" data-astro-cid-s4b42ur5>Browse</a></div></div></section><section class="tier" data-tone="1" data-astro-cid-s4b42ur5><div class="tier-head" data-astro-cid-s4b42ur5><h2 data-astro-cid-s4b42ur5>Standard</h2><span class="tier-count" data-astro-cid-s4b42ur5>2 tests</span></div><p class="tier-blurb" data-astro-cid-s4b42ur5>Our middle level, aimed at ordinary test-day difficulty.</p><div class="tile-grid" data-astro-cid-s4b42ur5><div class="tile-cell" data-astro-cid-s4b42ur5><a class="tile is-live" href="/sat/tests/standard-1/" aria-label="Start Standard Practice Test 1" data-astro-cid-s4b42ur5><span class="tile-num" aria-hidden="true" data-astro-cid-s4b42ur5>1</span><span class="tile-state" aria-hidden="true" data-astro-cid-s4b42ur5>Start</span></a><a class="tile-browse" href="/sat/tests/standard-1/browse/" aria-label="Browse Standard Practice Test 1" data-astro-cid-s4b42ur5>Browse</a></div><div class="tile-cell" data-astro-cid-s4b42ur5><a class="tile is-live" href="/sat/tests/standard-2/" aria-label="Start Standard Practice Test 2" data-astro-cid-s4b42ur5><span class="tile-num" aria-hidden="true" data-astro-cid-s4b42ur5>2</span><span class="tile-state" aria-hidden="true" data-astro-cid-s4b42ur5>Start</span></a><a class="tile-browse" href="/sat/tests/standard-2/browse/" aria-label="Browse Standard Practice Test 2" data-astro-cid-s4b42ur5>Browse</a></div></div></section><section class="tier" data-tone="3" data-astro-cid-s4b42ur5><div class="tier-head" data-astro-cid-s4b42ur5><h2 data-astro-cid-s4b42ur5>Advanced</h2><span class="tier-count" data-astro-cid-s4b42ur5>2 tests</span></div><p class="tier-blurb" data-astro-cid-s4b42ur5>Written to run harder than test day on purpose.</p><div class="tile-grid" data-astro-cid-s4b42ur5><div class="tile-cell" data-astro-cid-s4b42ur5><a class="tile is-live" href="/sat/tests/advanced-1/" aria-label="Start Advanced Practice Test 1" data-astro-cid-s4b42ur5><span class="tile-num" aria-hidden="true" data-astro-cid-s4b42ur5>1</span><span class="tile-state" aria-hidden="true" data-astro-cid-s4b42ur5>Start</span></a><a class="tile-browse" href="/sat/tests/advanced-1/browse/" aria-label="Browse Advanced Practice Test 1" data-astro-cid-s4b42ur5>Browse</a></div><div class="tile-cell" data-astro-cid-s4b42ur5><a class="tile is-live" href="/sat/tests/advanced-2/" aria-label="Start Advanced Practice Test 2" data-astro-cid-s4b42ur5><span class="tile-num" aria-hidden="true" data-astro-cid-s4b42ur5>2</span><span class="tile-state" aria-hidden="true" data-astro-cid-s4b42ur5>Start</span></a><a class="tile-browse" href="/sat/tests/advanced-2/browse/" aria-label="Browse Advanced Practice Test 2" data-astro-cid-s4b42ur5>Browse</a></div></div></section><p data-astro-cid-s4b42ur5>Studying a topic rather than sitting a full test? Start with the <a href="/sat/english/" data-astro-cid-s4b42ur5>Reading and Writing study guide</a> or the <a href="/sat/math/" data-astro-cid-s4b42ur5>Math study guide</a>.</p></main><footer class="site-footer"><nav class="footer-nav" aria-label="Footer"><a href="/how-to-use/">How to use</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><p>Free, open practice tests. Not affiliated with or endorsed by the College Board, ACT, or the MAA.</p></footer><script>
+      // Three-way theme control (Soft / Light / Dark) as an ARIA radiogroup with
+      // roving tabindex and arrow-key selection. Persists to localStorage `opt.theme`.
+      (function () {
+        var group = document.querySelector(".theme-switch");
+        if (!group) return;
+        var opts = Array.prototype.slice.call(group.querySelectorAll(".theme-opt"));
+
+        function current() {
+          var t = document.documentElement.getAttribute("data-theme");
+          return t === "light" || t === "dark" ? t : "soft";
+        }
+
+        function sync() {
+          var cur = current();
+          opts.forEach(function (o) {
+            var on = o.getAttribute("data-theme-value") === cur;
+            o.setAttribute("aria-checked", on ? "true" : "false");
+            o.tabIndex = on ? 0 : -1;
+          });
+        }
+
+        function apply(val, moveFocus) {
+          document.documentElement.setAttribute("data-theme", val);
+          try {
+            localStorage.setItem("opt.theme", val);
+          } catch (e) {}
+          sync();
+          if (moveFocus) {
+            var el = group.querySelector('[data-theme-value="' + val + '"]');
+            if (el) el.focus();
+          }
+        }
+
+        opts.forEach(function (o, i) {
+          o.addEventListener("click", function () {
+            apply(o.getAttribute("data-theme-value"), false);
+          });
+          o.addEventListener("keydown", function (e) {
+            var dir =
+              e.key === "ArrowRight" || e.key === "ArrowDown"
+                ? 1
+                : e.key === "ArrowLeft" || e.key === "ArrowUp"
+                  ? -1
+                  : 0;
+            if (!dir) return;
+            e.preventDefault();
+            var next = (i + dir + opts.length) % opts.length;
+            apply(opts[next].getAttribute("data-theme-value"), true);
+          });
+        });
+
+        sync();
+      })();
+    </script></body></html>

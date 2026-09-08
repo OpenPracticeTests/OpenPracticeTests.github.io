@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Reading and Writing topic guides for the SAT, with worked examples, the trap behind each question type, and tiered practice built to pair with the practice tests."><link rel="canonical" href="https://openpracticetests.org/sat/english/"><meta property="og:type" content="website"><meta property="og:site_name" content="Open Practice Tests"><meta property="og:locale" content="en_US"><meta property="og:title" content="SAT Reading and Writing Study Guide | Open Practice Tests"><meta property="og:description" content="Reading and Writing topic guides for the SAT, with worked examples, the trap behind each question type, and tiered practice built to pair with the practice tests."><meta property="og:url" content="https://openpracticetests.org/sat/english/"><meta property="og:image" content="https://openpracticetests.org/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SAT Reading and Writing Study Guide | Open Practice Tests"><meta name="twitter:description" content="Reading and Writing topic guides for the SAT, with worked examples, the trap behind each question type, and tiered practice built to pair with the practice tests."><meta name="twitter:image" content="https://openpracticetests.org/og-image.png"><meta name="twitter:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk.woff2"><title>SAT Reading and Writing Study Guide | Open Practice Tests</title><script>
+      // Apply the saved theme before first paint to avoid a flash. Soft is the
+      // default; only "light" and "dark" override it.
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("opt.theme");
+        } catch (e) {}
+        if (t !== "soft" && t !== "light" && t !== "dark") t = "soft";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CyBKJ_JA.css"><style>.study-domain[data-astro-cid-45r5ygwy]{margin-block:var(--space-4)}.study-domain[data-astro-cid-45r5ygwy] h2[data-astro-cid-45r5ygwy]{margin-bottom:.4rem}.study-domain-share[data-astro-cid-45r5ygwy]{margin:0 0 var(--space-2);color:var(--color-muted);font-size:.9rem}
+</style></head><body><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item is-section"><details class="nav-menu"><summary class="nav-summary">Tests<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/" class="has-children">SAT</a><ul class="nav-sub"><li><a href="/sat/tests/">Practice tests</a></li><li><a href="/sat/english/" aria-current="page">Reading and Writing study guide</a></li><li><a href="/sat/math/">Math study guide</a></li><li><a href="/sat/#guides">Exam guides</a></li></ul></li></ul></details></li><li class="nav-item"><a class="nav-link" href="/how-to-use/">How to use</a></li><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">More<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></details></li></ul></nav><script>
+  // Single-open, click-outside, Escape, and a close when focus leaves the nav entirely.
+  // Everything else, the toggle and the expanded state a screen reader hears included, is
+  // the UA's.
+  (function () {
+    var nav = document.querySelector(".site-nav");
+    if (!nav) return;
+    var menus = Array.prototype.slice.call(nav.querySelectorAll("details.nav-menu"));
+    if (!menus.length) return;
+
+    function closeAll(except) {
+      menus.forEach(function (m) {
+        if (m !== except) m.open = false;
+      });
+    }
+
+    menus.forEach(function (m) {
+      m.addEventListener("toggle", function () {
+        if (m.open) closeAll(m);
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target)) closeAll(null);
+    });
+
+    // No stopPropagation, and an early return when nothing is open. One other handler is on
+    // `document` (the runner's modal); a tool panel's and the highlight popover's are bound to
+    // their own elements, so they run first and both stop propagation. Ordering is documented
+    // in tools/floating-panel.ts.
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = menus.filter(function (m) {
+        return m.open;
+      });
+      if (!open.length) return;
+      var summary = open[0].querySelector("summary");
+      closeAll(null);
+      if (summary) summary.focus();
+    });
+
+    // Tabbing out of a panel must not leave it hanging over the page. The test is per
+    // disclosure, not per nav: tabbing from the last link of one panel to a top-level link
+    // beside it never leaves the nav, so a nav-wide test would keep that panel open.
+    nav.addEventListener("focusout", function (e) {
+      var to = e.relatedTarget;
+      menus.forEach(function (m) {
+        if (m.open && (!to || !m.contains(to))) m.open = false;
+      });
+    });
+  })();
+</script><div class="theme-switch" role="radiogroup" aria-label="Color theme"><button type="button" class="theme-opt" data-theme-value="soft" role="radio" aria-checked="true" tabindex="0">Soft</button><button type="button" class="theme-opt" data-theme-value="light" role="radio" aria-checked="false" tabindex="-1">Light</button><button type="button" class="theme-opt" data-theme-value="dark" role="radio" aria-checked="false" tabindex="-1">Dark</button></div></header><main class="site-main" data-tone="2"><nav class="crumbs" aria-label="Breadcrumb"><a href="/sat/">SAT</a><span aria-hidden="true">&rsaquo;</span><span>Reading and Writing</span></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SAT","item":"https://openpracticetests.org/sat/"},{"@type":"ListItem","position":2,"name":"Reading and Writing"}]}</script><p class="eyebrow">Study guide</p><h1>Reading and Writing</h1><p class="lede">Everything this section tests, one page per topic. Each page teaches one rule or skill, shows it worked through, names the trap the test wraps it in, and drills it with original practice items tagged by difficulty tier.</p><p>16 of 16 topics are written. They are organized by the section's four content domains, in the order the domains appear in every module.</p><section class="study-domain" id="craft-and-structure" data-tone="1" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Craft and Structure</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 28% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/english/craft-and-structure/words-in-context/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Words in Context</h3><p data-astro-cid-45r5ygwy>Predict the missing word from the sentence&#39;s own logic before the choices can mislead you.</p></a><a class="card" href="/sat/english/craft-and-structure/text-structure-and-purpose/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Text Structure and Purpose</h3><p data-astro-cid-45r5ygwy>Read for what a text is doing, then judge each choice&#39;s verb before its topic.</p></a><a class="card" href="/sat/english/craft-and-structure/cross-text-connections/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Cross-Text Connections</h3><p data-astro-cid-45r5ygwy>Pin each author&#39;s stance in three words and stop the test from inflating a mild caution into a rejection.</p></a></div></section><section class="study-domain" id="information-and-ideas" data-tone="2" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Information and Ideas</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 26% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/english/information-and-ideas/central-ideas-and-details/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Central Ideas and Details</h3><p data-astro-cid-45r5ygwy>The main idea must cover the whole text, not its loudest sentence.</p></a><a class="card" href="/sat/english/information-and-ideas/command-of-evidence-textual/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Command of Evidence: Textual</h3><p data-astro-cid-45r5ygwy>Match findings to the claim, not the topic; on-topic is not on-claim.</p></a><a class="card" href="/sat/english/information-and-ideas/command-of-evidence-quantitative/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Command of Evidence: Quantitative</h3><p data-astro-cid-45r5ygwy>Read the axes first, then find the one comparison the sentence actually needs.</p></a><a class="card" href="/sat/english/information-and-ideas/inferences/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Inferences</h3><p data-astro-cid-45r5ygwy>The right completion is forced by the text&#39;s premises, not merely allowed by them.</p></a></div></section><section class="study-domain" id="standard-english-conventions" data-tone="3" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Standard English Conventions</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 26% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/english/standard-english-conventions/subject-verb-agreement/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Subject-Verb Agreement</h3><p data-astro-cid-45r5ygwy>Find the true subject when the sentence parks a decoy noun next to the verb.</p></a><a class="card" href="/sat/english/standard-english-conventions/verb-forms-and-tense/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Verb Forms and Tense</h3><p data-astro-cid-45r5ygwy>Keep a sentence&#39;s clock consistent and its verbs finished.</p></a><a class="card" href="/sat/english/standard-english-conventions/pronouns/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Pronouns</h3><p data-astro-cid-45r5ygwy>Match every pronoun to one unambiguous antecedent in number and case.</p></a><a class="card" href="/sat/english/standard-english-conventions/possessives-and-contractions/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Possessives and Contractions</h3><p data-astro-cid-45r5ygwy>Its and it&#39;s, whose and who&#39;s, plural and possessive: the apostrophe rules that decide them.</p></a><a class="card" href="/sat/english/standard-english-conventions/sentence-boundaries/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Sentence Boundaries</h3><p data-astro-cid-45r5ygwy>Periods, semicolons, and the comma splice your ear insists is fine.</p></a><a class="card" href="/sat/english/standard-english-conventions/punctuation-within-sentences/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Punctuation Within Sentences</h3><p data-astro-cid-45r5ygwy>Colons, dashes, and the commas that fence off nonessential material.</p></a><a class="card" href="/sat/english/standard-english-conventions/modifiers-and-sentence-structure/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Modifiers and Sentence Structure</h3><p data-astro-cid-45r5ygwy>Put descriptions next to what they describe, and keep parallel ideas in parallel form.</p></a></div></section><section class="study-domain" id="expression-of-ideas" data-tone="4" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Expression of Ideas</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 20% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/english/expression-of-ideas/transitions/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Transitions</h3><p data-astro-cid-45r5ygwy>Name the relationship between two sentences before you look at a single choice.</p></a><a class="card" href="/sat/english/expression-of-ideas/rhetorical-synthesis/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Rhetorical Synthesis</h3><p data-astro-cid-45r5ygwy>Read the goal first; every choice is faithful to the notes, and only one serves the goal.</p></a></div></section><p>The <a href="/sat/math/">Math study guide</a> covers the other section. Put any of this under the clock with a <a href="/sat/tests/">full-length practice test</a>.</p></main><footer class="site-footer"><nav class="footer-nav" aria-label="Footer"><a href="/how-to-use/">How to use</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><p>Free, open practice tests. Not affiliated with or endorsed by the College Board, ACT, or the MAA.</p></footer><script>
+      // Three-way theme control (Soft / Light / Dark) as an ARIA radiogroup with
+      // roving tabindex and arrow-key selection. Persists to localStorage `opt.theme`.
+      (function () {
+        var group = document.querySelector(".theme-switch");
+        if (!group) return;
+        var opts = Array.prototype.slice.call(group.querySelectorAll(".theme-opt"));
+
+        function current() {
+          var t = document.documentElement.getAttribute("data-theme");
+          return t === "light" || t === "dark" ? t : "soft";
+        }
+
+        function sync() {
+          var cur = current();
+          opts.forEach(function (o) {
+            var on = o.getAttribute("data-theme-value") === cur;
+            o.setAttribute("aria-checked", on ? "true" : "false");
+            o.tabIndex = on ? 0 : -1;
+          });
+        }
+
+        function apply(val, moveFocus) {
+          document.documentElement.setAttribute("data-theme", val);
+          try {
+            localStorage.setItem("opt.theme", val);
+          } catch (e) {}
+          sync();
+          if (moveFocus) {
+            var el = group.querySelector('[data-theme-value="' + val + '"]');
+            if (el) el.focus();
+          }
+        }
+
+        opts.forEach(function (o, i) {
+          o.addEventListener("click", function () {
+            apply(o.getAttribute("data-theme-value"), false);
+          });
+          o.addEventListener("keydown", function (e) {
+            var dir =
+              e.key === "ArrowRight" || e.key === "ArrowDown"
+                ? 1
+                : e.key === "ArrowLeft" || e.key === "ArrowUp"
+                  ? -1
+                  : 0;
+            if (!dir) return;
+            e.preventDefault();
+            var next = (i + dir + opts.length) % opts.length;
+            apply(opts[next].getAttribute("data-theme-value"), true);
+          });
+        });
+
+        sync();
+      })();
+    </script></body></html>

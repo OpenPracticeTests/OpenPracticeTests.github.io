@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Math topic guides for the SAT, with worked examples, the trap behind each question type, and tiered practice built to pair with the practice tests."><link rel="canonical" href="https://openpracticetests.org/sat/math/"><meta property="og:type" content="website"><meta property="og:site_name" content="Open Practice Tests"><meta property="og:locale" content="en_US"><meta property="og:title" content="SAT Math Study Guide | Open Practice Tests"><meta property="og:description" content="Math topic guides for the SAT, with worked examples, the trap behind each question type, and tiered practice built to pair with the practice tests."><meta property="og:url" content="https://openpracticetests.org/sat/math/"><meta property="og:image" content="https://openpracticetests.org/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SAT Math Study Guide | Open Practice Tests"><meta name="twitter:description" content="Math topic guides for the SAT, with worked examples, the trap behind each question type, and tiered practice built to pair with the practice tests."><meta name="twitter:image" content="https://openpracticetests.org/og-image.png"><meta name="twitter:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk.woff2"><title>SAT Math Study Guide | Open Practice Tests</title><script>
+      // Apply the saved theme before first paint to avoid a flash. Soft is the
+      // default; only "light" and "dark" override it.
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("opt.theme");
+        } catch (e) {}
+        if (t !== "soft" && t !== "light" && t !== "dark") t = "soft";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CyBKJ_JA.css"><style>.study-domain[data-astro-cid-45r5ygwy]{margin-block:var(--space-4)}.study-domain[data-astro-cid-45r5ygwy] h2[data-astro-cid-45r5ygwy]{margin-bottom:.4rem}.study-domain-share[data-astro-cid-45r5ygwy]{margin:0 0 var(--space-2);color:var(--color-muted);font-size:.9rem}
+</style></head><body><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item is-section"><details class="nav-menu"><summary class="nav-summary">Tests<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/" class="has-children">SAT</a><ul class="nav-sub"><li><a href="/sat/tests/">Practice tests</a></li><li><a href="/sat/english/">Reading and Writing study guide</a></li><li><a href="/sat/math/" aria-current="page">Math study guide</a></li><li><a href="/sat/#guides">Exam guides</a></li></ul></li></ul></details></li><li class="nav-item"><a class="nav-link" href="/how-to-use/">How to use</a></li><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">More<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></details></li></ul></nav><script>
+  // Single-open, click-outside, Escape, and a close when focus leaves the nav entirely.
+  // Everything else, the toggle and the expanded state a screen reader hears included, is
+  // the UA's.
+  (function () {
+    var nav = document.querySelector(".site-nav");
+    if (!nav) return;
+    var menus = Array.prototype.slice.call(nav.querySelectorAll("details.nav-menu"));
+    if (!menus.length) return;
+
+    function closeAll(except) {
+      menus.forEach(function (m) {
+        if (m !== except) m.open = false;
+      });
+    }
+
+    menus.forEach(function (m) {
+      m.addEventListener("toggle", function () {
+        if (m.open) closeAll(m);
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target)) closeAll(null);
+    });
+
+    // No stopPropagation, and an early return when nothing is open. One other handler is on
+    // `document` (the runner's modal); a tool panel's and the highlight popover's are bound to
+    // their own elements, so they run first and both stop propagation. Ordering is documented
+    // in tools/floating-panel.ts.
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = menus.filter(function (m) {
+        return m.open;
+      });
+      if (!open.length) return;
+      var summary = open[0].querySelector("summary");
+      closeAll(null);
+      if (summary) summary.focus();
+    });
+
+    // Tabbing out of a panel must not leave it hanging over the page. The test is per
+    // disclosure, not per nav: tabbing from the last link of one panel to a top-level link
+    // beside it never leaves the nav, so a nav-wide test would keep that panel open.
+    nav.addEventListener("focusout", function (e) {
+      var to = e.relatedTarget;
+      menus.forEach(function (m) {
+        if (m.open && (!to || !m.contains(to))) m.open = false;
+      });
+    });
+  })();
+</script><div class="theme-switch" role="radiogroup" aria-label="Color theme"><button type="button" class="theme-opt" data-theme-value="soft" role="radio" aria-checked="true" tabindex="0">Soft</button><button type="button" class="theme-opt" data-theme-value="light" role="radio" aria-checked="false" tabindex="-1">Light</button><button type="button" class="theme-opt" data-theme-value="dark" role="radio" aria-checked="false" tabindex="-1">Dark</button></div></header><main class="site-main" data-tone="3"><nav class="crumbs" aria-label="Breadcrumb"><a href="/sat/">SAT</a><span aria-hidden="true">&rsaquo;</span><span>Math</span></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SAT","item":"https://openpracticetests.org/sat/"},{"@type":"ListItem","position":2,"name":"Math"}]}</script><p class="eyebrow">Algebra to trigonometry</p><h1>Math</h1><p class="lede">Everything the Math section tests, one page per topic. Each page teaches one rule or method, works it through on original examples, names the trap the test wraps it in, and drills it with practice items tagged by difficulty tier, every wrong answer being the number one specific slip produces.</p><p>22 of 22 topics are written. They are organized by the section's four content domains, in blueprint order. The math questions inside the practice tests are all written too, and every one carries a worked explanation you can read in review.</p><section class="study-domain" id="algebra" data-tone="1" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Algebra</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 35% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/math/algebra/linear-equations-in-one-variable/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Linear Equations in One Variable</h3><p data-astro-cid-45r5ygwy>Name what the question asks for before you touch the equation, then undo the operations in reverse order.</p></a><a class="card" href="/sat/math/algebra/linear-equations-in-two-variables/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Linear Equations in Two Variables</h3><p data-astro-cid-45r5ygwy>Slope, intercepts, and the forms of a line, and how to move between an equation, a graph, and two points.</p></a><a class="card" href="/sat/math/algebra/linear-functions/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Linear Functions</h3><p data-astro-cid-45r5ygwy>Read a rate of change and a starting value out of a table, a graph, or a sentence, and say what each means in context.</p></a><a class="card" href="/sat/math/algebra/systems-of-linear-equations/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Systems of Two Linear Equations</h3><p data-astro-cid-45r5ygwy>Substitution, elimination, and the coefficient test that tells you when a system has no solution or infinitely many.</p></a><a class="card" href="/sat/math/algebra/linear-inequalities/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Linear Inequalities</h3><p data-astro-cid-45r5ygwy>Solve and graph inequalities in one or two variables, flip the sign when you must, and read a boundary that is not part of the answer.</p></a></div></section><section class="study-domain" id="advanced-math" data-tone="3" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Advanced Math</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 35% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/math/advanced-math/equivalent-expressions/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Equivalent Expressions</h3><p data-astro-cid-45r5ygwy>Factor, expand, and rewrite with exponent rules until two expressions are visibly the same one.</p></a><a class="card" href="/sat/math/advanced-math/quadratic-equations/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Quadratic Equations</h3><p data-astro-cid-45r5ygwy>Factoring, the quadratic formula, and the discriminant, plus the line-and-parabola system that reduces to a quadratic.</p></a><a class="card" href="/sat/math/advanced-math/radical-rational-and-absolute-value-equations/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Radical, Rational, and Absolute Value Equations</h3><p data-astro-cid-45r5ygwy>Isolate, undo, and then check: the equations where a solution can appear that the original never allowed.</p></a><a class="card" href="/sat/math/advanced-math/quadratic-functions-and-parabolas/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Quadratic Functions and Parabolas</h3><p data-astro-cid-45r5ygwy>Vertex, intercepts, and the form that shows each one, so a graph question becomes a rewriting question.</p></a><a class="card" href="/sat/math/advanced-math/exponential-functions/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Exponential Functions</h3><p data-astro-cid-45r5ygwy>Growth and decay by a constant factor, the percent hidden in that factor, and how to tell exponential from linear in a table.</p></a><a class="card" href="/sat/math/advanced-math/polynomials-and-function-notation/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Polynomials and Function Notation</h3><p data-astro-cid-45r5ygwy>Zeros, factors, and remainders, composed functions, transformations, and reading a function off its graph or table.</p></a></div></section><section class="study-domain" id="problem-solving-and-data-analysis" data-tone="2" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Problem-Solving and Data Analysis</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 15% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/math/problem-solving-and-data-analysis/ratios-rates-and-units/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Ratios, Rates, and Units</h3><p data-astro-cid-45r5ygwy>Set up the proportion, keep the units straight, and convert once rather than twice.</p></a><a class="card" href="/sat/math/problem-solving-and-data-analysis/percentages/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Percentages</h3><p data-astro-cid-45r5ygwy>Percent of, percent change, and the reverse problem: what the original was before the change.</p></a><a class="card" href="/sat/math/problem-solving-and-data-analysis/one-variable-data/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>One-Variable Data</h3><p data-astro-cid-45r5ygwy>Mean, median, mode, range, and standard deviation, and how each one moves when the data does.</p></a><a class="card" href="/sat/math/problem-solving-and-data-analysis/two-variable-data-and-scatterplots/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Two-Variable Data and Scatterplots</h3><p data-astro-cid-45r5ygwy>Lines of best fit, what their slope and intercept mean, and the gap between a data point and the model&#39;s prediction.</p></a><a class="card" href="/sat/math/problem-solving-and-data-analysis/probability/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Probability</h3><p data-astro-cid-45r5ygwy>Probabilities from a two-way table, conditional probability, and the denominator that changes when a condition is added.</p></a><a class="card" href="/sat/math/problem-solving-and-data-analysis/margin-of-error-and-inference/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Margin of Error and Inference</h3><p data-astro-cid-45r5ygwy>What a sample statistic lets you say about a population, and what a margin of error does and does not mean.</p></a><a class="card" href="/sat/math/problem-solving-and-data-analysis/evaluating-statistical-claims/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Evaluating Statistical Claims</h3><p data-astro-cid-45r5ygwy>Random selection against random assignment, and which conclusions each study design can and cannot support.</p></a></div></section><section class="study-domain" id="geometry-and-trigonometry" data-tone="4" data-astro-cid-45r5ygwy><h2 data-astro-cid-45r5ygwy>Geometry and Trigonometry</h2><p class="study-domain-share" data-astro-cid-45r5ygwy>About 15% of the section.</p><div class="card-grid" data-astro-cid-45r5ygwy><a class="card" href="/sat/math/geometry-and-trigonometry/area-and-volume/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Area and Volume</h3><p data-astro-cid-45r5ygwy>Composite figures, the formulas on the reference sheet, and what happens to area and volume when a dimension scales.</p></a><a class="card" href="/sat/math/geometry-and-trigonometry/lines-angles-and-triangles/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Lines, Angles, and Triangles</h3><p data-astro-cid-45r5ygwy>Parallel lines, angle sums, similar triangles, and the proportions that similarity hands you.</p></a><a class="card" href="/sat/math/geometry-and-trigonometry/right-triangles-and-trigonometry/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Right Triangles and Trigonometry</h3><p data-astro-cid-45r5ygwy>The Pythagorean theorem, special right triangles, and sine, cosine, and tangent as ratios of sides.</p></a><a class="card" href="/sat/math/geometry-and-trigonometry/circles/" data-astro-cid-45r5ygwy><h3 data-astro-cid-45r5ygwy>Circles</h3><p data-astro-cid-45r5ygwy>Arc length, sector area, the equation of a circle, and completing the square to find its center and radius.</p></a></div></section><p>The <a href="/sat/english/">Reading and Writing study guide</a> covers the other section. Put any of this under the clock with a <a href="/sat/tests/">full-length practice test</a>.</p></main><footer class="site-footer"><nav class="footer-nav" aria-label="Footer"><a href="/how-to-use/">How to use</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><p>Free, open practice tests. Not affiliated with or endorsed by the College Board, ACT, or the MAA.</p></footer><script>
+      // Three-way theme control (Soft / Light / Dark) as an ARIA radiogroup with
+      // roving tabindex and arrow-key selection. Persists to localStorage `opt.theme`.
+      (function () {
+        var group = document.querySelector(".theme-switch");
+        if (!group) return;
+        var opts = Array.prototype.slice.call(group.querySelectorAll(".theme-opt"));
+
+        function current() {
+          var t = document.documentElement.getAttribute("data-theme");
+          return t === "light" || t === "dark" ? t : "soft";
+        }
+
+        function sync() {
+          var cur = current();
+          opts.forEach(function (o) {
+            var on = o.getAttribute("data-theme-value") === cur;
+            o.setAttribute("aria-checked", on ? "true" : "false");
+            o.tabIndex = on ? 0 : -1;
+          });
+        }
+
+        function apply(val, moveFocus) {
+          document.documentElement.setAttribute("data-theme", val);
+          try {
+            localStorage.setItem("opt.theme", val);
+          } catch (e) {}
+          sync();
+          if (moveFocus) {
+            var el = group.querySelector('[data-theme-value="' + val + '"]');
+            if (el) el.focus();
+          }
+        }
+
+        opts.forEach(function (o, i) {
+          o.addEventListener("click", function () {
+            apply(o.getAttribute("data-theme-value"), false);
+          });
+          o.addEventListener("keydown", function (e) {
+            var dir =
+              e.key === "ArrowRight" || e.key === "ArrowDown"
+                ? 1
+                : e.key === "ArrowLeft" || e.key === "ArrowUp"
+                  ? -1
+                  : 0;
+            if (!dir) return;
+            e.preventDefault();
+            var next = (i + dir + opts.length) % opts.length;
+            apply(opts[next].getAttribute("data-theme-value"), true);
+          });
+        });
+
+        sync();
+      })();
+    </script></body></html>

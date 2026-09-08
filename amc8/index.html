@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Free AMC 8 competition math practice tests and study guides are coming soon to Open Practice Tests."><link rel="canonical" href="https://openpracticetests.org/amc8/"><meta name="robots" content="noindex, follow"><meta property="og:type" content="website"><meta property="og:site_name" content="Open Practice Tests"><meta property="og:locale" content="en_US"><meta property="og:title" content="AMC 8 Practice Tests | Open Practice Tests"><meta property="og:description" content="Free AMC 8 competition math practice tests and study guides are coming soon to Open Practice Tests."><meta property="og:url" content="https://openpracticetests.org/amc8/"><meta property="og:image" content="https://openpracticetests.org/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AMC 8 Practice Tests | Open Practice Tests"><meta name="twitter:description" content="Free AMC 8 competition math practice tests and study guides are coming soon to Open Practice Tests."><meta name="twitter:image" content="https://openpracticetests.org/og-image.png"><meta name="twitter:image:alt" content="Open Practice Tests: free, full-length SAT practice tests and study guides."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk.woff2"><title>AMC 8 Practice Tests | Open Practice Tests</title><script>
+      // Apply the saved theme before first paint to avoid a flash. Soft is the
+      // default; only "light" and "dark" override it.
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("opt.theme");
+        } catch (e) {}
+        if (t !== "soft" && t !== "light" && t !== "dark") t = "soft";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CyBKJ_JA.css"></head><body><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">Tests<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/" class="has-children">SAT</a><ul class="nav-sub"><li><a href="/sat/tests/">Practice tests</a></li><li><a href="/sat/english/">Reading and Writing study guide</a></li><li><a href="/sat/math/">Math study guide</a></li><li><a href="/sat/#guides">Exam guides</a></li></ul></li></ul></details></li><li class="nav-item"><a class="nav-link" href="/how-to-use/">How to use</a></li><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">More<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></details></li></ul></nav><script>
+  // Single-open, click-outside, Escape, and a close when focus leaves the nav entirely.
+  // Everything else, the toggle and the expanded state a screen reader hears included, is
+  // the UA's.
+  (function () {
+    var nav = document.querySelector(".site-nav");
+    if (!nav) return;
+    var menus = Array.prototype.slice.call(nav.querySelectorAll("details.nav-menu"));
+    if (!menus.length) return;
+
+    function closeAll(except) {
+      menus.forEach(function (m) {
+        if (m !== except) m.open = false;
+      });
+    }
+
+    menus.forEach(function (m) {
+      m.addEventListener("toggle", function () {
+        if (m.open) closeAll(m);
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target)) closeAll(null);
+    });
+
+    // No stopPropagation, and an early return when nothing is open. One other handler is on
+    // `document` (the runner's modal); a tool panel's and the highlight popover's are bound to
+    // their own elements, so they run first and both stop propagation. Ordering is documented
+    // in tools/floating-panel.ts.
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = menus.filter(function (m) {
+        return m.open;
+      });
+      if (!open.length) return;
+      var summary = open[0].querySelector("summary");
+      closeAll(null);
+      if (summary) summary.focus();
+    });
+
+    // Tabbing out of a panel must not leave it hanging over the page. The test is per
+    // disclosure, not per nav: tabbing from the last link of one panel to a top-level link
+    // beside it never leaves the nav, so a nav-wide test would keep that panel open.
+    nav.addEventListener("focusout", function (e) {
+      var to = e.relatedTarget;
+      menus.forEach(function (m) {
+        if (m.open && (!to || !m.contains(to))) m.open = false;
+      });
+    });
+  })();
+</script><div class="theme-switch" role="radiogroup" aria-label="Color theme"><button type="button" class="theme-opt" data-theme-value="soft" role="radio" aria-checked="true" tabindex="0">Soft</button><button type="button" class="theme-opt" data-theme-value="light" role="radio" aria-checked="false" tabindex="-1">Light</button><button type="button" class="theme-opt" data-theme-value="dark" role="radio" aria-checked="false" tabindex="-1">Dark</button></div></header><main class="site-main" data-tone="3"><h1>AMC 8 practice tests</h1><p>Timed, 25-question AMC 8 practice with instant scoring and worked solutions is in the works, built on the same engine as our SAT tests.</p><div class="coming-soon"><span class="badge badge-soon">Coming soon</span><p>Original middle-school competition math sets are on the way. Check back soon.</p></div><h2>Study materials</h2><p>Guides and strategy to pair with the tests, built for the AMC 8.</p><div class="card-grid"><a class="card" href="/amc8/study/"><span class="badge badge-soon">Coming soon</span><h3>Guides and strategy</h3><p>Problem-solving guides and contest strategy for the AMC 8.</p><span class="card-foot">See details <span aria-hidden="true">&rarr;</span></span></a></div><p>In the meantime, our <a href="/sat/tests/">SAT practice tests</a> are available now.</p></main><footer class="site-footer"><nav class="footer-nav" aria-label="Footer"><a href="/how-to-use/">How to use</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><p>Free, open practice tests. Not affiliated with or endorsed by the College Board, ACT, or the MAA.</p></footer><script>
+      // Three-way theme control (Soft / Light / Dark) as an ARIA radiogroup with
+      // roving tabindex and arrow-key selection. Persists to localStorage `opt.theme`.
+      (function () {
+        var group = document.querySelector(".theme-switch");
+        if (!group) return;
+        var opts = Array.prototype.slice.call(group.querySelectorAll(".theme-opt"));
+
+        function current() {
+          var t = document.documentElement.getAttribute("data-theme");
+          return t === "light" || t === "dark" ? t : "soft";
+        }
+
+        function sync() {
+          var cur = current();
+          opts.forEach(function (o) {
+            var on = o.getAttribute("data-theme-value") === cur;
+            o.setAttribute("aria-checked", on ? "true" : "false");
+            o.tabIndex = on ? 0 : -1;
+          });
+        }
+
+        function apply(val, moveFocus) {
+          document.documentElement.setAttribute("data-theme", val);
+          try {
+            localStorage.setItem("opt.theme", val);
+          } catch (e) {}
+          sync();
+          if (moveFocus) {
+            var el = group.querySelector('[data-theme-value="' + val + '"]');
+            if (el) el.focus();
+          }
+        }
+
+        opts.forEach(function (o, i) {
+          o.addEventListener("click", function () {
+            apply(o.getAttribute("data-theme-value"), false);
+          });
+          o.addEventListener("keydown", function (e) {
+            var dir =
+              e.key === "ArrowRight" || e.key === "ArrowDown"
+                ? 1
+                : e.key === "ArrowLeft" || e.key === "ArrowUp"
+                  ? -1
+                  : 0;
+            if (!dir) return;
+            e.preventDefault();
+            var next = (i + dir + opts.length) % opts.length;
+            apply(opts[next].getAttribute("data-theme-value"), true);
+          });
+        });
+
+        sync();
+      })();
+    </script></body></html>

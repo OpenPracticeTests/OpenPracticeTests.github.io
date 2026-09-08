@@ -1,0 +1,5 @@
+# https://openpracticetests.org/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://openpracticetests.org/sitemap.xml
